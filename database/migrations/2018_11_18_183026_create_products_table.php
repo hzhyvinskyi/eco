@@ -7,14 +7,26 @@ use Illuminate\Database\Migrations\Migration;
 class CreateProductsTable extends Migration
 {
     /**
+     * Table's name
+     *
+     * @var string
+     */
+    private $tableName = 'products';
+
+    /**
      * Run the migrations.
      *
      * @return void
      */
     public function up()
     {
-        Schema::create('products', function (Blueprint $table) {
+        Schema::create($this->tableName, function (Blueprint $table) {
             $table->increments('id');
+            $table->string('name');
+            $table->text('description');
+            $table->decimal('price');
+            $table->decimal('discount');
+            $table->unsignedTinyInteger('stock');
             $table->timestamps();
         });
     }
@@ -26,6 +38,6 @@ class CreateProductsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('products');
+        Schema::dropIfExists($this->tableName);
     }
 }
