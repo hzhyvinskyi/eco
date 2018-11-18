@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
-use App\Product;
+use App\Http\Controllers\Controller;
+use App\Review;
 use Illuminate\Http\Request;
 
-class ProductsController extends Controller
+class ReviewsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -31,10 +32,10 @@ class ProductsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Product  $product
+     * @param  \App\Review  $review
      * @return \Illuminate\Http\Response
      */
-    public function show(Product $product)
+    public function show(Review $review)
     {
         //
     }
@@ -43,10 +44,10 @@ class ProductsController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Product  $product
+     * @param  \App\Review  $review
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Product $product)
+    public function update(Request $request, Review $review)
     {
         //
     }
@@ -54,10 +55,10 @@ class ProductsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Product  $product
+     * @param  \App\Review  $review
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Product $product)
+    public function destroy(Review $review)
     {
         //
     }
