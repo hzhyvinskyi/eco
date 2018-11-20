@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Http\Resources\Product\ProductResource;
+use App\Http\Resources\Product\ProductCollection;
 use App\Product;
 use Illuminate\Http\Request;
 
@@ -12,11 +13,11 @@ class ProductsController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return Product[]|\Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Http\Resources\Json\AnonymousResourceCollection
      */
     public function index()
     {
-        return Product::all();
+        return ProductCollection::collection(Product::all());
     }
 
     /**
