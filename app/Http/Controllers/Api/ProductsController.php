@@ -65,17 +65,25 @@ class ProductsController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-        //
+        $product->update($request->all());
+
+        return response([
+            'data' => new ProductResource($product),
+            Response::HTTP_CREATED
+        ]);
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Product  $product
-     * @return \Illuminate\Http\Response
+     * @param Product $product
+     * @return \Illuminate\Contracts\Routing\ResponseFactory|\Illuminate\Http\Response
+     * @throws \Exception
      */
     public function destroy(Product $product)
     {
-        //
+        $product->delete();
+
+        return response(null, Response::HTTP_NO_CONTENT);
     }
 }
